@@ -1,81 +1,93 @@
 ---
-- include: configuration/update_cache.yml
+- name: Update cache
+  include: configuration/update_cache.yml
   vars:
     hosts: 'planet'
   tags:
   - cache
 
-- include: components/opdk-backup.yml
+- name: Backup zookeeper
+  include: components/opdk-backup.yml
   vars:
     hosts: 'ds'
     component_name: 'apigee-zookeeper'
   tags:
   - zookeeper
 
-- include: components/opdk-backup.yml
+- name: Backup cassandra
+  include: components/opdk-backup.yml
   vars:
     hosts: 'ds'
     component_name: 'apigee-cassandra'
   tags:
   - cassandra
 
-- include: components/opdk-backup.yml
+- name: Backup router
+  include: components/opdk-backup.yml
   vars:
     hosts: 'rmp'
     component_name: 'edge-router'
   tags:
   - router
 
-- include: components/opdk-backup.yml
+- name: Backup mp
+  include: components/opdk-backup.yml
   vars:
     hosts: 'rmp'
     component_name: 'edge-message-processor'
   tags:
   - mp
 
-- include: components/opdk-backup.yml
+- name: Backup ps
+  include: components/opdk-backup.yml
   vars:
     hosts: 'pg'
     component_name: 'edge-postgres-server'
   tags:
   - ps
 
-- include: components/opdk-backup.yml
+- name: Backup postgres
+  include: components/opdk-backup.yml
   vars:
     hosts: 'pgmaster[0]'
     component_name: 'apigee-postgresql'
   tags:
   - pg
 
-- include: components/opdk-backup.yml
+- name: Backup qs
+  include: components/opdk-backup.yml
   vars:
     hosts: 'qpid'
     component_name: 'edge-qpid-server'
   tags:
   - qs
 
-- include: components/opdk-backup.yml
+- name: Backup qpid
+  include: components/opdk-backup.yml
   vars:
     hosts: 'qpid'
     component_name: 'apigee-qpidd'
   tags:
   - qpid
 
-- include: components/opdk-backup.yml
+- name: Backup ldap
+  include: components/opdk-backup.yml
   vars:
     hosts: 'ldap'
     component_name: 'apigee-openldap'
   tags:
   - ldap
 
-- include: components/opdk-backup.yml
+- name: Backup ms
+  include: components/opdk-backup.yml
   vars:
     hosts: 'ms'
     component_name: 'edge-management-server'
   tags:
   - ms
 
-- include: components/opdk-backup.yml
+- name: Backup ui
+  include: components/opdk-backup.yml
   vars:
     hosts: 'ui'
     component_name: 'edge-ui'
