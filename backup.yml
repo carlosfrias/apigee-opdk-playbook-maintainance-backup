@@ -1,9 +1,9 @@
 ---
-- include: configuration/load-opdk-credentials.yml
+- include: configuration/update_cache.yml
   vars:
     hosts: 'planet'
   tags:
-  - credentials
+  - cache
 
 - include: components/opdk-backup.yml
   vars:
