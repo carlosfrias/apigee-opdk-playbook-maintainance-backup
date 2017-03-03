@@ -1,10 +1,11 @@
 ---
-- name: Update cache
-  include: configuration/update_cache.yml
-  vars:
-    hosts: 'planet'
-  tags:
-  - cache
+- name: Update the ansible cache
+  hosts: planet
+  tags: ['cache']
+  vars_files:
+  - ~/.apigee/credentials.yml
+  roles:
+  - apigee-opdk-setup-default-settings
 
 - name: Backup zookeeper
   include: components/opdk-backup.yml

@@ -2,3 +2,5 @@
 - src: https://github.com/carlosfrias/apigee-opdk-setup-default-settings
 
 - src: https://github.com/carlosfrias/apigee-opdk-backup
+
+- src: https://github.com/carlosfrias/apigee-opdk-cache-update.git
