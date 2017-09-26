@@ -3,7 +3,7 @@
   hosts: planet
   tags: ['cache']
   vars_files:
-  - ~/.apigee/credentials.yml
+  - ~/.apigee-secure/credentials.yml
   roles:
   - apigee-opdk-setup-default-settings
 
